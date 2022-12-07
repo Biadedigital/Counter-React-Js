@@ -2,22 +2,24 @@ import './App.css'
 import React, { Component } from "react"
 
 export default class App extends Component {
-
-
-  state = {
-    count: 0
+  constructor() {
+    super()
+    this.state = {
+      count: 0
+    }
+    this.add = this.add.bind(this)
+    this.subtract = this.subtract.bind(this)
   }
 
-  add = () => {
+  add() {
     this.setState(prevState => ({ count: prevState.count + 1 }))
   }
 
-  subtract = () => {
+  subtract() {
     this.setState(prevState => ({ count: prevState.count - 1 }))
   }
 
   render() {
-
     return (
       <div className="counter">
         <button className="counter--minus" onClick={this.subtract}>–</button>
